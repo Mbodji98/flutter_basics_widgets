@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -74,17 +76,20 @@ class _Home extends State<Home> {
                     oui = !oui;
                   });
                 }),
-            RaisedButton(
-              onPressed: boutonAppuye,
-              child: const Text("Je suis plus hut que toi"),
-              color: Colors.red,
-              textColor: Colors.white,
-              elevation: 7.0,
-            ),
-            FlatButton(
-              onPressed: boutonAppuye,
-              child: const Text("Appluyer moi"),
-            ),
+            ElevatedButton(
+                onPressed: boutonAppuye,
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    elevation: 7.0,
+                    textStyle: const TextStyle(color: Colors.white)),
+                child: const Text("Je suis plus haut que toi")),
+            TextButton(
+                onPressed: boutonAppuye,
+                style: TextButton.styleFrom(),
+                child: const Text(
+                  "Appuyez moi",
+                  style: TextStyle(color: Colors.black),
+                )),
             Container(
               height: largeur / 5,
               color: Colors.red,
